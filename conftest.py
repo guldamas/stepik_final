@@ -18,7 +18,6 @@ def pytest_addoption(parser):
 def browser(request):
     user_language = request.config.getoption("language")
     browser_name = request.config.getoption("browser_name")
-    browser = None
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
         options = Options()
@@ -34,4 +33,3 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
-
